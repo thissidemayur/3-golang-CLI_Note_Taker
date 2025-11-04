@@ -1,7 +1,7 @@
 .PHONY: build run tidy test clean lint
 
 build:
-	@go build -o bin/app .
+	@go build -o bin/app cmd/note-taker/main.go
 
 run: build
 	@./bin/app
@@ -15,4 +15,4 @@ test:
 clean: 
 	@rm -rf bin
 lint:
-	@golangci-lint run ./...
+	golangci-lint run ./...
