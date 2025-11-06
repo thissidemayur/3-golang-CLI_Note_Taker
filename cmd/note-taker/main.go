@@ -1,8 +1,7 @@
 package main
 
 import (
-	"fmt"
-	"os"
+	"log"
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/thissidemayur/3-golang-CLI_Note_Taker/internal/config"
@@ -12,11 +11,13 @@ import (
 func main() {
 	config.InitDirPath()
 
-	// bubble tea 
-	p:=tea.NewProgram(ui.InitializeModel())
-	if _,err:=p.Run(); err != nil {
-		fmt.Println("Error while Running Bubble Tea framework' programme: ",err)
-		os.Exit(1)
-	}
+	
+	
 
+	log.Println("🪶 Starting CLI Note Taker")
+
+	p := tea.NewProgram(ui.InitializeModel(), tea.WithAltScreen())
+	if _, err := p.Run(); err != nil {
+		log.Fatalf("Error while Running Bubble Tea program: %v \n", err)
+	}
 }

@@ -1,6 +1,7 @@
 package notes
 
 import (
+	"log"
 	"os"
 
 	"github.com/charmbracelet/bubbles/list"
@@ -8,19 +9,20 @@ import (
 )
 
 type NoteItem struct{
-	Title string
-	Desc string
+	title string
+	desc string
 }
 
-func (i NoteItem) TitleString() string       { return i.Title }
-func (i NoteItem) DescriptionString() string  { return i.Desc }
-func (i NoteItem) FilterValue() string { return i.Title }
+func (i NoteItem) Title() string       { return i.title }
+func (i NoteItem) Description() string  { return i.desc }
+func (i NoteItem) FilterValue() string { return i.title }
 
 
 func ListFiles() []list.Item {
-	items:= make([]list.Item,0)
-    entries,err :=os.ReadDir(config.VaultDir)
+	items := make([]list.Item, 0)
+	entries, err := os.ReadDir(config.VaultDir)
 	if err != nil {
+		log.Fatalln("Error while reading notes: ",err)
 		return nil
 	}
 	for _,entry := range entries {
@@ -33,10 +35,11 @@ func ListFiles() []list.Item {
 
 			modifiedTime := fileInfo.ModTime().Format("2006-01-02 15:04")
 			items =append(items,NoteItem{
-				Title: entry.Name(),
-				Desc:  "Modified: " + modifiedTime,
-			})			
+				title: entry.Name(),
+				desc:  "Modified: " + modifiedTime,
+			})
 		}
 	}
+	log.Println("Listing all notes : ", items)
 	return items
 }

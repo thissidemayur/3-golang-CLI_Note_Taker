@@ -1,22 +1,27 @@
 package config
 
 import (
-	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 )
 
-const (
-	VaultDir string="note-taker";
+var (
+	VaultDir string
+	dirName  = ".note-taker"
 )
+
 
 func InitDirPath()  {
 	homeDir, err := os.UserHomeDir()
 	if err != nil {
-		log.Fatal("Could not get Home directory: ",err)
+		log.Fatal("❌ Could not get Home directory: ",err)
 	}
-	noteTakerPath := fmt.Sprintf("%s/%s",&homeDir,VaultDir)
+	VaultDir = filepath.Join(homeDir, dirName)
+	if err:=os.MkdirAll(VaultDir,0755); err != nil {
+		log.Fatal("❌ Could not create Vault directory: ",err)
+	}
 
-	os.MkdirAll(noteTakerPath,0644)
+	log.Println("✅ Vault directory:", VaultDir)
 
 }
