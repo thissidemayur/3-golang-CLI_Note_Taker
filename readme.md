@@ -21,10 +21,13 @@ Designed for developers who love **speed, minimalism, and good UX** — no mouse
 - 🎨 Theme switcher support (planned)
 
 --
-## 📦 Installation Guide
 
-👉 To install Note Taker CLI, see detailed OS-specific steps here:  
-➡️ [View Installation Instructions](./INSTALLATION.md)
+## 🚀 Quick Install
+
+Choose your OS:
+- [Linux](./INSTALLATION.md#🐧-linux-amd64)
+- [macOS](./INSTALLATION.md#🍎-macosamd64)
+- [Windows](./INSTALLATION.md#🪟-windows)
 
 
 ---

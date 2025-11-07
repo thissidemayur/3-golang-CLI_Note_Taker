@@ -4,18 +4,18 @@ This document explains how to download, install, and run **Note Taker CLI** for 
 
 ---
 
-## 🐧 Linux (amd64)
+## 🐧-linux-amd64
 ```bash 
 curl -L https://github.com/thissidemayur/3-golang-CLI_Note_Taker/releases/download/v1.0.0/note-taker-linux-amd64.tar.gz \
-    -o /tmp/note-taker.tar.gz && \
-sudo tar -xzf /tmp/note-taker-linux-amd64.tar  -C /usr/local/bin && \
+  -o /tmp/note-taker-linux-amd64.tar.gz && \
+sudo tar -xzf /tmp/note-taker-linux-amd64.tar.gz -C /usr/local/bin && \
 sudo mv /usr/local/bin/note-taker-linux-amd64 /usr/local/bin/note-taker && \
 note-taker
 ```
 
 
 
-## macOS(amd64)
+## 🍎-macosamd64
 ```bash
 curl -L  https://github.com/thissidemayur/3-golang-CLI_Note_Taker/releases/download/v1.0.0/note-taker-darwin-amd64.tar.gz  \
     -o /tmp/note-taker-darwin-amd64.tar.gz && \
@@ -24,7 +24,7 @@ sudo mv /usr/local/bin/note-taker-darwin-amd64 /usr/local/bin/note-taker && \
 note-taker
 ```
 
-## Windows
+## 🪟-windows
 ```powershell
 Invoke-WebRequest -Uri "https://github.com/thissidemayur/3-golang-CLI_Note_Taker/releases/download/v1.0.0/note-taker-windows-amd64.tar.gz" -OutFile "$env:TEMP\note-taker.tar.gz"
 tar -xzf "$env:TEMP\note-taker.tar.gz" -C "$env:TEMP"
