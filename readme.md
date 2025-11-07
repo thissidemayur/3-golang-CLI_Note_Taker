@@ -20,6 +20,13 @@ Designed for developers who love **speed, minimalism, and good UX** — no mouse
 - 🔒 Optional encryption support (planned)
 - 🎨 Theme switcher support (planned)
 
+--
+## 📦 Installation Guide
+
+👉 To install Note Taker CLI, see detailed OS-specific steps here:  
+➡️ [View Installation Instructions](./INSTALLATION.md)
+
+
 ---
 
 ## 🧩 Directory Structure
@@ -45,7 +52,8 @@ note-taker/
 ├── Makefile          
 ```
 
-## ⚙️ Installation
+
+## ⚙️ Dev Installation
 ### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/yourusername/note-taker.git
